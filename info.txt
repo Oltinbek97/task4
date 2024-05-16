@@ -1,0 +1,8 @@
+How Detached HEAD Occurs
+A detached HEAD occurs in the following scenarios:
+
+Checking out a specific commit: If you check out a specific commit by its hash (e.g., git checkout 1a2b3c4d), rather than checking out a branch, Git places you in a detached HEAD state. This is because you are no longer working on the tip of a branch.
+Checking out tags: Tags in Git are often used to mark specific points in history as important, typically for releases. When you check out a tag, you are also put into a detached HEAD state because tags, like specific commits, do not automatically move forward when new commits are made.
+During a rebase or interactive rebase: When you rebase a branch, you're rewriting commit history, and during the process, Git temporarily detaches HEAD to move commits around.
+How It Works
+In a detached HEAD state, you can continue to make commits, and these commits will update HEAD to point to each new commit as usual. However, since HEAD is not attached to a branch, if you switch to another branch without creating a new branch from these commits, you will lose the reference to these commits, and they could become "dangling" (potentially lost unless recovered by other means like the reflog).

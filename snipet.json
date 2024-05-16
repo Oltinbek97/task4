@@ -1,0 +1,12 @@
+{
+    "Basic Function": {
+      "prefix": "func",
+      "body": [
+        "function ${1:functionName}(${2:params}) {",
+        "  ${3:// body}",
+        "}"
+      ],
+      "description": "Create a basic function"
+    }
+  }
+  
